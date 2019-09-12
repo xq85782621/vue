@@ -38,6 +38,19 @@ export var routes = [
     component: resolve => require(['../components/common/Login.vue'], resolve),
   },
 
+  /**
+   * 404
+   */
+  {
+    path: '/404',
+    name: '404',
+    component: resolve => require(['../components/common/404.vue'], resolve),
+  },
+  {
+    path: "*", // 此处需特别注意置于最底部
+    redirect: "/404"
+  }
+
 
 ]
 

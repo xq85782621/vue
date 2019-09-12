@@ -63,7 +63,7 @@
         </Sider>
         <Layout :style="{padding: '20px 24px 24px'}">
 
-          <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}"  class="content" >
+          <Content :style="{padding: '24px', minHeight: 'calc(100vh - ( 60px + 24px + 24px   ))', background: '#fff'}">
             <router-view></router-view>
           </Content>
         </Layout>
@@ -99,11 +99,12 @@ export default {
 
 <style scoped>
   .layout{
-    border: 1px solid #d7dde4;
+    margin: 0;
+    border: 0px ;
     background: #515a6e;
-    /*position: relative;*/
-    border-radius: 4px;
-    overflow: hidden;
+    position: relative;
+    /*overflow: hidden;*/
+    height: 100%;
 
   }
   .layout-logo{
@@ -124,10 +125,6 @@ export default {
   }
 
 
-
-  .ivu-layout-sider{
-    height: 800px;
-  }
 
 
 

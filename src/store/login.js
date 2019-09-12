@@ -4,10 +4,11 @@
 import iView from 'iview';
 
 import {postRequest} from '../util/Request'
+
 import {router} from "../router";
 
 const login = {
-  namespaced: true,//增加命名空间,不然在组件中无法使用mapState 等辅助函数快捷引入
+  namespaced: true,
 
   state: {
     username: '',
@@ -16,19 +17,20 @@ const login = {
   mutations: {
 
     login(state) {
-
       let params = {
-        username : state.username,
-        password : state.password,
+        username: state.username,
+        password: state.password,
       }
-
-      postRequest("users/3",params).then((data) => {
-        console.log(data.data)
-      })
+      // postRequest("users/3",params).then((data) => {
+      //   console.log(data.data)
+      // })
+      router.push('/center')
     }
 
   }
 
 
 }
+
+
 export default login

@@ -23,11 +23,8 @@
 </template>
 
 <script>
-
   import {mapMutations, mapActions} from 'vuex';
-
   export default {
-
     name: "Login",
     data() {
       return this.$store.state.login;
@@ -36,14 +33,12 @@
       ...mapMutations('login',
         [
           'login',
-
-
         ]),
     }
   }
 </script>
 
-<style scoped>
+<style  scoped>
   .login-container {
     font-size: 18px;
     border-radius: 15px;
@@ -54,6 +49,7 @@
     background: #fff;
     border: 1px solid #eaeaea;
     box-shadow: 0 0 25px #cac6c6;
+
   }
 
   .login_title {
