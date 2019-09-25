@@ -80,8 +80,7 @@ const deviceInfo = {
                   // 可以发现通过这种方式也能在render内部访问当前state数据了,不用担心this指向问题
                   // deviceInfo.state.list[0].device_name = 'sss';
                   // 通过store对象调用任意store ,下面是测试调用当前的一个mutation
-                  store.commit('deviceInfo/test', '传的参数')
-                  console.log(store);
+                  store.commit('deviceInfo/test', '传的参数');
                   /** @namespace iView.Message */
                   (params.row.device_state === 0) ? iView.Message.info("设备在线中") : (params.row.device_state) === 1 ? iView.Message.error("设备离线") : iView.Message.error("设备异常");
                 }
