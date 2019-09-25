@@ -14,7 +14,7 @@
         </Input>
       </FormItem>
       <FormItem>
-        <Button type="primary" style="width: 100%" @click="login">登录</Button>
+        <Button type="primary" style="width: 100%" @click="login" :disabled="password == '' || username == ''" >登录</Button>
       </FormItem>
     </Form>
 

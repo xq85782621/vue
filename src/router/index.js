@@ -26,7 +26,12 @@ export var routes = [
         path: 'deviceInfo',
         name: 'deviceInfo',
         component: resolve => require(['../components/device/DeviceInfo.vue'], resolve),
-      }
+      },
+      {
+        path: 'tree',
+        name: 'tree',
+        component: resolve => require(['../components/demo/DemoTree.vue'], resolve),
+      },
     ]
   },
   /**
