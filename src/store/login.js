@@ -1,7 +1,7 @@
 /**
  * 引入iView 就可以直接 使用 iView 对象访问 其中的组件了
  */
-import iView from 'iview';
+import iView from 'view-design';
 
 import {postRequest} from '../util/Request'
 

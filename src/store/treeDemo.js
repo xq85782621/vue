@@ -1,7 +1,7 @@
 /**
  * 在vuex中引入iVeiw 就可以直接 使用 iveiw对象访问 其中的组件了
  */
-import iView from 'iview';
+import iView from 'view-design';
 
 
 const treeDemo = {

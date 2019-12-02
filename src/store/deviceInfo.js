@@ -8,7 +8,7 @@ import iView from 'iview';
 import deviceInfoVue from '../components/device/DeviceInfo'
 
 /**
- * 通过把store对象引入同样可以在render函数中使用 this.$store 的功能
+ * 通过把store对象引入同样可以在render函数中通过 store 对象完成 this.$store 的功能
  */
 import store from '@/store/index'
 
@@ -52,7 +52,7 @@ const deviceInfo = {
                 // console.log(params.row)
               }
             }
-          }, null)
+          })
         }
       },
       {
@@ -138,9 +138,77 @@ const deviceInfo = {
     detail_show: false,
 
 
+    cityList: [
+      {
+        value: '-1',
+        label: '全部'
+      },
+      {
+        value: '0',
+        label: '在线'
+      },
+      {
+        value: '1',
+        label: '离线'
+      },
+      {
+        value: '2',
+        label: '异常'
+      },
+
+    ],
+    model1: '-1',
+
+    columns14: [
+      {
+        title: 'Date',
+        key: 'date'
+      },
+      {
+        title: 'Name',
+        key: 'name'
+      },
+      {
+        title: 'Age',
+        key: 'age'
+      },
+      {
+        title: 'Address',
+        key: 'address'
+      }
+    ],
+    data5: [
+      {
+        name: 'John Brown',
+        age: 18,
+        address: 'New York No. 1 Lake Park',
+        date: '2016-10-03'
+      },
+      {
+        name: 'Jim Green',
+        age: 24,
+        address: 'London No. 1 Lake Park',
+        date: '2016-10-01'
+      },
+      {
+        name: 'Joe Black',
+        age: 30,
+        address: 'Sydney No. 1 Lake Park',
+        date: '2016-10-02'
+      },
+      {
+        name: 'Jon Snow',
+        age: 26,
+        address: 'Ottawa No. 2 Lake Park',
+        date: '2016-10-04'
+      }
+    ]
+
+
   },
   mutations: {
     test(state, value) {
+      state.list[0].device_name = 'sss';
       console.log(value)
     },
   },

@@ -9,28 +9,38 @@ export var routes = [
   {
     path: '/',
     name: 'home',
-    component: resolve => require(['../components/layout/Home.vue'], resolve),
+    component: () => import('../components/layout/Home.vue'),
     redirect: '/center',
     children: [
       {
         path: 'center',
         name: 'center',
-        component: resolve => require(['../components/layout/Center.vue'], resolve),
+        component: () => import('../components/layout/Center.vue'),
       },
       {
         path: 'deviceLog',
         name: 'deviceLog',
-        component: resolve => require(['../components/device/DeviceLog.vue'], resolve),
+        component: () => import('../components/device/DeviceLog.vue'),
       },
       {
         path: 'deviceInfo',
         name: 'deviceInfo',
-        component: resolve => require(['../components/device/DeviceInfo.vue'], resolve),
+        component: () => import('../components/device/DeviceInfo.vue'),
       },
       {
-        path: 'tree',
-        name: 'tree',
-        component: resolve => require(['../components/demo/DemoTree.vue'], resolve),
+        path: 'user',
+        name: 'user',
+        component: () => import('../components/system/User.vue'),
+      },
+      {
+        path: 'role',
+        name: 'role',
+        component: () => import('../components/system/Role.vue'),
+      },
+      {
+        path: 'department',
+        name: 'department',
+        component: () => import('../components/system/Department.vue'),
       },
     ]
   },
@@ -40,7 +50,7 @@ export var routes = [
   {
     path: '/login',
     name: 'login',
-    component: resolve => require(['../components/common/Login.vue'], resolve),
+    component: () => import('../components/common/Login.vue'),
   },
 
   /**
@@ -49,7 +59,7 @@ export var routes = [
   {
     path: '/404',
     name: '404',
-    component: resolve => require(['../components/common/404.vue'], resolve),
+    component: () => import('../components/common/404.vue'),
   },
   {
     path: "*", // 此处需特别注意置于最底部

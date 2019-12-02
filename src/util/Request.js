@@ -95,6 +95,7 @@ export const uploadFileRequest = (url, params) => {
     }
   });
 }
+
 export const putRequest = (url, params) => {
   return axios({
     method: 'put',
@@ -119,9 +120,10 @@ export const deleteRequest = (url) => {
   });
 }
 
-export const getRequest = (url) => {
+export const getRequest = (url,params) => {
   return axios({
     method: 'get',
+    data: params,
     url: `${url}`
   });
 }

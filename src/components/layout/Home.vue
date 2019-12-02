@@ -48,11 +48,11 @@
             <Submenu name="3">
               <template slot="title">
                 <Icon type="ios-contacts"/>
-                人事管理
+                系统管理
               </template>
-              <MenuItem name="3-1">员工管理</MenuItem>
-              <MenuItem name="3-2">员工调动</MenuItem>
-              <MenuItem name="3-2">员工调薪</MenuItem>
+              <MenuItem name="user">用户管理</MenuItem>
+              <MenuItem name="role">角色管理</MenuItem>
+              <MenuItem name="department">部门管理</MenuItem>
             </Submenu>
             <Submenu name="4">
               <template slot="title">
@@ -101,7 +101,7 @@
 <style scoped>
   .layout {
     margin: 0;
-    border: 0px;
+    border: 0;
     background: #515a6e;
     position: relative;
     overflow: hidden;
