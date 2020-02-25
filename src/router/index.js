@@ -42,6 +42,11 @@ export var routes = [
         name: 'department',
         component: () => import('../components/system/Department.vue'),
       },
+      {
+        path: 'tree',
+        name: 'tree',
+        component: () => import('../components/demo/DemoTree.vue'),
+      },
     ]
   },
   /**
@@ -73,6 +78,7 @@ export var routes = [
 export const router = new Router({
   routes,
   mode: "history",
+  base: '/'
 });
 
 

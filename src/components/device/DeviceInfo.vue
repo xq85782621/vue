@@ -7,8 +7,8 @@
     </ButtonGroup>
     <Button shape="circle" @click="ClearCurrentRow">清除当前选中行</Button>
 
-    <Select  prefix="ios-home" v-model="model1" style="width:150px">
-      <Option v-for="item in cityList"  :key="item.value"   :label="item.label">
+    <Select clearable placeholder="全部" prefix="ios-home" v-model="model1" style="width:150px">
+      <Option v-for="item in cityList"  :key="item.value"   :value="item.label" :label="item.label">
         <span > {{ item.label }}</span>
         <span style="float:right;color:#ccc">{{ item.value }}</span>
       </Option>

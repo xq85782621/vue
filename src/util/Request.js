@@ -17,11 +17,17 @@ axios.interceptors.request.use(config => {
 })
 
 
-
+// 所有的响应都会经过这里
 axios.interceptors.response.use(response => {
+  // 如果响应内容的success为false ,这说明请求错误
+  if(!response.data.success){
+    Message.error(response.data.message)
+    return Promise.reject(response)
+  }
   return response
 }, err => {
   if (err && err.response) {
+    console.log(err)
     switch (err.response.status) {
       case 400:
         Message.error('错误请求')
@@ -65,7 +71,7 @@ axios.interceptors.response.use(response => {
   } else {
     Message.error('连接到服务器失败')
   }
-  return Promise.resolve(err.response)
+  return Promise.reject(err.response)
 })
 
 export const postRequest = (url, params) => {
@@ -74,7 +80,7 @@ export const postRequest = (url, params) => {
     url: `${url}`,
     data: params,
     transformRequest: [function (data) {
-      let ret = ''
+      let ret = '';
       for (let it in data) {
         ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
       }
@@ -123,7 +129,9 @@ export const deleteRequest = (url) => {
 export const getRequest = (url,params) => {
   return axios({
     method: 'get',
-    data: params,
+    // 注意get请求这里是params
+    params: params,
     url: `${url}`
   });
 }
+

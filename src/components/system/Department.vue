@@ -140,4 +140,33 @@
 
 <style scoped>
 
+  .ivu-tree {
+    text-align:start;
+  }
+  .ivu-tree-arrow  .ivu-icon{
+
+  }
+
+  .ivu-tree {
+    height: 40px;
+    justify-content: space-between;
+  }
+
+  .ivu-tree-title {
+    width: 1000px;
+  }
+  .ivu-tree-children li span:nth-child(2){
+    flex: 1;
+  }
+
+
+  ivu-tree-arrow ivu-tree-arrow-open{
+
+  }
+
+  .ivu-tree {
+    line-height: 30px;
+  }
+
+
 </style>

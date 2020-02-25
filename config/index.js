@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/proxyApi": {
-        target: 'http://localhost:8090', // 后端url
+        target: 'http://localhost:8090/', // 后端url
         changeOrigin: true,
         pathRewrite: {
           '^/proxyApi': ''
@@ -21,8 +21,8 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '0.0.0.0', // can be overwritten by process.env.HOST
+    port: 8091, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -65,8 +65,8 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css'],
+      productionGzip: false,
+      productionGzipExtensions: ['js', 'css'],
 
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:

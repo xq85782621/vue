@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div id="user">
+
+
     <Row>
       <Col span="4">
         <ButtonGroup>
@@ -338,6 +340,10 @@
   }
 </script>
 
-<style scoped>
 
+<!-- 为什么加了 scope -->
+<style scoped>
+   >>> tr {
+    cursor:pointer
+  }
 </style>

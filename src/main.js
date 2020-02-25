@@ -1,7 +1,7 @@
 
 
 
-import 'iview/dist/styles/iview.css';
+import 'view-design/dist/styles/iview.css';
 
 
 import Vue from 'vue'
@@ -10,7 +10,7 @@ import router from './router'
 import Vuex from 'vuex';
 import Axios from 'axios';
 
-import iView from 'iview';
+import iView from 'view-design';
 
 import store from '@/store/index'
 

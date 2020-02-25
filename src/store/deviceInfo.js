@@ -13,7 +13,7 @@ import deviceInfoVue from '../components/device/DeviceInfo'
 import store from '@/store/index'
 
 const deviceInfo = {
-  // 增加命名空间,不然在组件中无法使用mapState 等辅助函数快捷引入
+  // 增加命名空间,不然在组件中无法使用 mapState 等辅助函数快捷引入
   namespaced: true,
   state: {
     name: 'state',
@@ -46,8 +46,8 @@ const deviceInfo = {
               value: params.row.buchong_num,
             },
             on: {
-              'on-change': function (event) {
-                //console.log(that.a.state)
+              onChange: function (event) {
+                console.log(event)
                 // params.row.buchong_num = event
                 // console.log(params.row)
               }
@@ -67,16 +67,21 @@ const deviceInfo = {
             'div',
             // 第二个参数是一个对象,里面可以对当前渲染的标签设置属性,样式等等
             {
+              // attrs 是 html 的固有属性
               attrs: {
                 // 在属性定义的时候善用三目表达式可以很方便的解决很多问题
                 title: (params.row.device_state === 0) ? '在线' : (params.row.device_state) === 1 ? '离线' : '设备异常',
+              },
+              // 自定义属性
+              props:{
+                color :'red'
               },
               style: {
                 // height : "90px",
                 // width: "80px"
               },
               on: {
-                'click': function () {
+                click: function () {
                   // 可以发现通过这种方式也能在render内部访问当前state数据了,不用担心this指向问题
                   // deviceInfo.state.list[0].device_name = 'sss';
                   // 通过store对象调用任意store ,下面是测试调用当前的一个mutation
@@ -140,10 +145,6 @@ const deviceInfo = {
 
     cityList: [
       {
-        value: '-1',
-        label: '全部'
-      },
-      {
         value: '0',
         label: '在线'
       },
@@ -157,7 +158,7 @@ const deviceInfo = {
       },
 
     ],
-    model1: '-1',
+    model1: '',
 
     columns14: [
       {
